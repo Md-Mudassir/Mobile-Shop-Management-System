@@ -1,0 +1,110 @@
+create table emp (usertype varchar2(20),username varchar2(20),password varchar2(20),phone int,adhaar int);
+
+
+order
+select	 "PAYMENT"."EMPNAME" as "EMPNAME",
+	 "PAYMENT"."ORDER_ID" as "ORDER_ID",
+	 "PAYMENT"."PAYMENT_ID" as "PAYMENT_ID",
+	 "PAYMENT"."PAYMENT_TYPE" as "PAYMENT_TYPE",
+	 "PAYMENT"."AMOUNT" as "AMOUNT",
+	 "PAYMENT"."TOTALITEMS" as "TOTALITEMS",
+	 "ORDERS"."ORDER_ID" as "ORDER_ID",
+	 "ORDERS"."CUST_ID" as "CUST_ID",
+	 "ORDERS"."SPHONE" as "SPHONE",
+	 "ORDERS"."SERIES" as "SERIES",
+	 "ORDERS"."PQTY" as "PQTY",
+	 "ORDERS"."PHONEPRICE" as "PHONEPRICE",
+	 "ORDERS"."MCARD" as "MCARD",
+	 "ORDERS"."CQTY" as "CQTY",
+	 "ORDERS"."CARDSERIES" as "CARDSERIES",
+	 "ORDERS"."CARDPRICE" as "CARDPRICE",
+	 "ORDERS"."HEADSET" as "HEADSET",
+	 "ORDERS"."HQTY" as "HQTY",
+	 "ORDERS"."HEADSETVER" as "HEADSETVER",
+	 "ORDERS"."HEADSETPRICE" as "HEADSETPRICE" 
+ from	 "ORDERS" "ORDERS",
+	 "PAYMENT" "PAYMENT"
+
+
+create table sold (
+cust_id varchar2(10),
+custname varchar2(30),
+gender varchar2(10),
+dop varchar2(20),
+address varchar2(100),
+phone_no varchar2(15),
+order_id varchar2(10)primary key,
+sphone varchar2(20),
+series varchar2(20),
+pqty varchar2(20),
+phoneprice varchar2(20),
+mcard varchar2(20),
+cardseries varchar2(20),
+cqty varchar2(20),
+cardprice varchar2(20),
+headset varchar2(20),
+headsetver varchar2(20),
+hqty varchar2(20),
+headsetprice varchar2(20),
+totalitems varchar2(10),
+payment_id varchar2(10),
+payment_type varchar2(40),
+amount varchar2(10),
+empname varchar2(20));
+
+
+SELECT "PAYMENT"."ORDER_ID" AS "ORDER_ID", 
+    "CUSTOMERS"."CUSTNAME" AS "CUSTNAME", 
+    "ORDERS"."SPHONE" AS "SPHONE", 
+    "ORDERS"."SERIES" AS "SERIES", "ORDERS"."PQTY" AS "PQTY", 
+    "ORDERS"."PHONEPRICE" AS "PHONEPRICE", 
+    "ORDERS"."MCARD" AS "MCARD", 
+    "ORDERS"."CARDSERIES" AS "CARDSERIES", 
+    "ORDERS"."CQTY" AS "CQTY", 
+    "ORDERS"."CARDPRICE" AS "CARDPRICE", 
+    "ORDERS"."HEADSET" AS "HEADSET", 
+    "ORDERS"."HEADSETVER" AS "HEADSETVER", 
+    "ORDERS"."HQTY" AS "HQTY", 
+    "ORDERS"."HEADSETPRICE" AS "HEADSETPRICE", 
+    "ORDERS"."TOTALITEMS" AS "TOTALITEMS", 
+    "PAYMENT"."PAYMENT_TYPE" AS "PAYMENT_TYPE", 
+    "PAYMENT"."AMOUNT" AS "AMOUNT", 
+    "PAYMENT"."EMPNAME" AS "EMPNAME"
+FROM "CUSTOMERS" "CUSTOMERS", "PAYMENT" "PAYMENT", 
+    "ORDERS" "ORDERS"
+
+create table purchases(cid varchar2(20) primary key,
+cname varchar2(30),
+pnumber varchar2(20),
+adhaar varchar2(20),
+gender varchar2(20),
+datee varchar2(20),
+address varchar2(30),
+cashtransaction varchar2(20),
+paytmtracnsaction varchar2(20),
+total varchar2(30),
+sphone varchar2(20),
+series varchar2(20),
+pqty varchar2(20),
+imei varchar2(20),
+phoneprice varchar2(20),
+mcard varchar2(20),
+cardseries varchar2(20),
+cqty varchar2(20),
+cardprice varchar2(20),
+headset varchar2(20),
+headsetver varchar2(20),
+hqty varchar2(20),
+headsetprice varchar2(20),
+totalitems int);
+
+
+
+
+create table headphone(hbrand varchar2(30),version varchar2(20),stock varchar2(20),price varchar2(20));
+
+create table memcard(brand varchar2(30),capacity varchar2(130),stock varchar2(20),price varchar2(20));
+,
+
+create table admin_login(admin_id varchar2(10),username varchar2(30),password varchar2(30));
+insert into admin_login values('01','mudassir','mudassir')
